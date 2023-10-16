@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200&family=Inter:wght@200;600&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="upper">
+            <div class="container-left">
+                ROCK<br>PAPER<br>SCISSORS
+            </div>
+            <div class="container-right">
+                <div class="box comp-box">
+                    <div class="comp-name">
+                        COMPUTER SCORE
+                    </div>
+                    <h1 class="compScore">
+                        0
+                    </h1>
+                </div>
+                <div class="box player-box">
+                    <div class="player-name">
+                        YOUR SCORE
+                    </div>
+                    <h1 class="playerScore" value="0">
+                        0
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-box select-box">
+            <div class="triangle-container">
+                <svg height="500" width="500">
+                    <polygon points="250,400 100,150 400,150" class="triangle"></polygon>
+                </svg>
+            </div>
+            <div class="select-row upper-row">
+                <div class="choiceBox rock" onclick="play('rock')">
+                    <img class="choice" id="rock" src="images/rock.png" alt="rock">
+                </div>
+                <div class="choiceBox scissor" onclick="play('scissor')">
+                    <img class="choice" id="scissor" src="images/scissor.png" alt="scissor">
+                </div>
+            </div>
+            <div class=" select-row lower-row">
+                <div class="choiceBox paper" onclick="play('paper')">
+                    <img class="choice" id="paper" src="images/paper.png" alt="paper">
+                </div>
+            </div>
+        </div>
+
+        <div class="main-box result-box">
+            <div class="result-section player-picked">
+                <h3>YOU PICKED</h3>
+                <div class="option person-choice">
+                    <img src="">
+                </div>
+            </div>
+            <div class="result-section result-button">
+                <div class="result">
+                    <h1>YOU WON</h1>
+                    <h3>AGAINST PC</h3>
+                </div>
+                <button id="play-again" onclick="selectAgain()">PLAY AGAIN</button>
+            </div>
+            <div class="result-section comp-picked">
+                <h3>PC PICKED</h3>
+                <div class="option computer-choice">
+                    <img src="">
+                </div>
+            </div>
+        </div>
+
+        <div class="winner-box">
+            <img id="cup-img" src="images/cup.png" alt="cup">
+            <img id="stars-img" src="images/stars.png" alt="stars">
+            <h1>HURRAY!!</h1>
+            <h2>YOU WON THE GAME</h2>
+            <button id="play-again" onclick="selectAgain()">PLAY AGAIN</button>
+        </div>
+
+        <div class="popUp-box">
+            <span class="close" onclick="handleRulesBox('close')">X</span>
+            <div class="rule-list">
+                <h2>Gaming Rules</h2>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                        paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button class="btn rules-box" onclick="handleRulesBox('open')">
+            RULES
+        </button>
+        <button class="btn next-box" onclick="displayWinner()" style="display: none;">
+            NEXT
+        </button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
